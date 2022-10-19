@@ -19,8 +19,8 @@ for p = 1 : numel(PostProcessing.cutoff_parts)
     eval(['lh = dlc_cutoff.',PostProcessing.cutoff_parts{p},'_lh;']);
     idxcut = find(lh<PostProcessing.cutoff_thr); %frame index of low-likelihooty
     Frame_interporate = [];    
-    %閾値以下のフレームが連続で続くのかを確認する
-    idxcut(:,2)=[1;diff(idxcut(:,1))];
+
+ idxcut(:,2)=[1;diff(idxcut(:,1))];
     k = 1;
     n_period=1;
     while k <= size(idxcut,1)
@@ -31,7 +31,7 @@ for p = 1 : numel(PostProcessing.cutoff_parts)
             case 0
                 if idxcut(k+1,2) == 1
                     
-                    try %idxcutの要素を超えたときに終了させるため。
+                    try %For stopping when k > size(idxcut,1)
                         while idxcut(k+1,2) == 1
                             k= k + 1;
                         end
