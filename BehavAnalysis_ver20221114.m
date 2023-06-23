@@ -16,7 +16,7 @@ speed tuning
 clc;clear all;close all; global Cali_ppc;global body_center;global fps
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INPUTs for DLC informations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-addpath(genpath('G:\332\Supl_Miniscope weight\Script_BehaviorOnly (After DLC)\subfun'))%path of original  toolbox- DLC_Parameters
+addpath(genpath('\subfun'))%path of original  toolbox- DLC_Parameters
 path_DLC = []; %path of DLC csv file. Need to delet 1st row.
 path_Video = []; '%path of mp4 video file to get fps.
 dir_matsave =  %direction of folder where data is saved.
@@ -24,7 +24,7 @@ dir_figsave = []; as you like
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%% INPUTs for DLC postprocessing %%%%%%%%%%
-Cali_ppc = 1254/62; %pixel-per-cm
+Cali_ppc = 1000/30; %pixel-per-cm
 %v = VideoReader(path_Video); frame = read(v,1);
 %imshow(frame);[xi,yi] = getpts; close; single(abs(xi(1)-xi(2)))
 partsname.body = 'body_center'; %name of csv file header
@@ -32,7 +32,7 @@ partsname.ear_R = 'Right_Ear';
 partsname.ear_L = 'Left_Ear';
 partsname.miniscope = 'Miniscope';
 partsname.tail_base = 'Tail_base';
-cutoff_thr = 0.5; %Cutoff of likelihood. If the likelihood is below from this value, the corresponding XY coordinations are repreaceld to NaN.
+cutoff_thr = 0.9; %Cutoff of likelihood. If the likelihood is below from this value, the corresponding XY coordinations are repreaceld to NaN.
 cutoff_parts = {'body';'miniscope';'ear_L';'ear_R';'tail_base'}; %Body parts which cutoff function is applyed.
 SmoothingFilter_name = 'movmedian'; %smoothing filter name. Default.. 'movmedian'
 bin_width_ms= 100; %Width of the smoothing fileter as milisecond.
