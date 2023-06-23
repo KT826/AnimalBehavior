@@ -17,10 +17,10 @@ clc;clear all;close all; global Cali_ppc;global body_center;global fps
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INPUTs for DLC informations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 addpath(genpath('G:\332\Supl_Miniscope weight\Script_BehaviorOnly (After DLC)\subfun'))%path of original  toolbox- DLC_Parameters
-path_DLC = 'G:\332\Supl_Miniscope weight\1108\DLC/UD-2R_20221108DLC_resnet50_FRMD7(EscapeAssay, IntactMouse)Oct28shuffle1_730000.csv'; %path of DLC csv file. Need to delet 1st row.
-path_Video = 'G:\332\Supl_Miniscope weight\1108\rawdata/UD-2R_20221108.mp4'; %path of mp4 video file to get fps.
-dir_matsave = 'G:\332\Supl_Miniscope weight\1108\Analysis'; %direction of folder where data is saved.
-dir_figsave = 'G:\332\Supl_Miniscope weight\1108\Analysis'; 
+path_DLC = []; %path of DLC csv file. Need to delet 1st row.
+path_Video = []; '%path of mp4 video file to get fps.
+dir_matsave =  %direction of folder where data is saved.
+dir_figsave = []; as you like 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%% INPUTs for DLC postprocessing %%%%%%%%%%
